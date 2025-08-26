@@ -1,5 +1,3 @@
-# San-Maria-School
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +6,70 @@
   <title>San Maria School of Music</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
   <style>
+
+    /* Make all images and videos scale */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Flexible text */
+h1, h2, h3, p {
+  word-wrap: break-word;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar a {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .section {
+    padding: 20px 10px;
+  }
+
+  .instructor-card, .course-card, .testimonial {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
     * {
       margin: 0;
       padding: 0;
@@ -17,7 +78,7 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #3c096c, #ff01fb, #ffbd00,  #006fc4);
+      background: linear-gradient(135deg,  #ca8300, #0000f6 , #ef00d3, #25d366 ,  #ed3e17, #8e8686);
       color: white;
       transition: background 0.4s, color 0.4s;
     }
@@ -32,26 +93,74 @@
     }
 
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(135deg, #1900ff, #ffe600);
-      padding: 30px 50px;
-      flex-wrap: wrap;
-    }
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #0015ff, #fbff00);
+  padding: 40px 60px;
+  overflow: hidden;
+}
+
+/* Glowing animated music design background */
+header::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url("C:\Users\hp\Downloads\Free  Flat, Purple, Gradient Background Images, Flat Violet Gradient Background Geometric Pattern H5 Photo Background PNG and Vectors.jpg"); /* Your image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.15;
+  width: 90%;
+  height: 100%;
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
+}
+
+header > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Float Animation Keyframes */
+@keyframes float {
+  0% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-15px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+}
+
 
     header h1 {
       font-size: 3rem;
     }
 
     nav {
-      background: #ebf376;
-      padding: 12px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
+  background: linear-gradient(to bottom, #fffecb, #e3d700);
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  border-top: 4px solid #ffffb3;
+  border-bottom: 4px solid #c4a300;
+  box-shadow: inset 0 8px 8px rgba(255, 255, 255, 0.3),
+              inset 0 -8px 8px rgba(0, 0, 0, 0.2),
+              0 4px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 50px;
+
+  
+}
 
     nav a {
       color: rgb(255, 0, 0);
@@ -174,16 +283,16 @@
     .teacher-card-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 50px;
       justify-content: center;
     }
 
     .teacher-card {
-      background: rgba(255, 215, 0, 0.75);
+      background: rgb(244, 224, 95);
       border-radius: 20px;
       backdrop-filter: blur(8px);
       box-shadow: 0 8px 32px rgba(210, 237, 5, 0.15);
-      width: 220px;
+      width: 240px;
       text-align: center;
       padding: 25px;
       transition: transform 0.3s, background 0.3s;
@@ -321,7 +430,7 @@
 
 </style>
 
-<section id="About" class="About Us">
+<section id="About" class="About Us" data-aos="fade-up">
   <h2>About Us</h2>
   <p>
     Established in 2017, Our San Maria School of Music is a vibrant community of musicians, educators, and learners passionate about music, dedicated to fostering a love of music and providing high-quality music education to students of all ages above 7 and backgrounds.
@@ -334,7 +443,7 @@
 
 
 
-  <section id="courses" class="courses">
+  <section id="courses" class="courses" data-aos="zoom-in">
     <h2>Courses Offered</h2>
    
     <!-- Tabs -->
@@ -360,8 +469,8 @@
           <p>- Training in classical, film, and contemporary music</p>
           <p>- Hands-on practice with scales, chords, and sight-reading</p>
           <p>- Ideal for solo performance, accompaniment, and composition</p>
-          <li><strong>Who Can Join?</strong></li>
-          <p>- Suitable for ages 5 and above. Whether you're a beginner, a music exam candidate, or a hobbyist—piano offers something for everyone.</p>
+          <li><strong>Eligibility</strong></li>
+          <p>- Suitable for ages 10 and above. Whether you're a beginner, a music exam candidate, or a hobbyist—piano offers something for everyone.</p>
         </ul>
       </div>
   
@@ -378,8 +487,8 @@
           <p>- Training in bowing, fingering, and posture</p>
           <p>- Solo and ensemble performance opportunities</p>
           <p>- Lessons in classical, contemporary, and film music styles</p>
-          <li><strong>Who Can Join?</strong></li>
-         <p>- Anyone aged 6 and above—no prior experience needed. Ideal for students interested in classical foundations or orchestral music.</p>
+          <li><strong>Eligibility</strong></li>
+         <p>- Anyone aged 10 and above—no prior experience needed. Ideal for students interested in western foundations.</p>
         </ul>
       </div>
   
@@ -395,8 +504,8 @@
           <p>- Acoustic, classical, and electric guitar options</p>
           <p>- Chord progressions, fingerstyle, and strumming techniques</p>
           <p>- Exposure to various genres: pop, rock, jazz, and more</p>
-          <li><strong>Who Can Join?</strong></li>
-          <p>- Open to ages 7 and up. Perfect for beginners, hobbyists, or aspiring performers.</p>
+          <li><strong>Eligibility</strong></li>
+          <p>- Open to ages 10 and up. Perfect for beginners, hobbyists, or aspiring performers.</p>
         </ul>
       </div>
   
@@ -412,8 +521,8 @@
           <p>- Full drum kit and percussion basics</p>
           <p>- Practice in various genres (rock, funk, jazz, gospel)</p>
           <p>- Training in tempo control, fills, and grooves</p>
-          <li><strong>Who Can Join?</strong></li>
-          <p>- Ages 8+, energetic learners</p>
+          <li><strong>Eligibility</strong></li>
+          <p>- Ages 10+, energetic learners</p>
         </ul>
       </div>
   
@@ -429,12 +538,12 @@
           <p>- Classical, contemporary, and gospel vocal training</p>
           <p>- Ear training, harmony, and microphone techniques</p>
           <p>- Individual and group performance coaching</p>
-          <li><strong>Who Can Join?</strong></li>
-          <p>- Open to all ages (5+ to adults). Whether you're a beginner, a church singer, or an aspiring performer—this is for you.</p>
+          <li><strong>Eligibility</strong></li>
+          <p>- Open to all ages (10+ to adults). Whether you're a beginner, a church singer, or an aspiring performer—this is for you.</p>
         </ul>
       </div>
-  
     </div>
+    <p>"All the above courses starts from the age of 10"</p>
   </section>
   
   <!-- 🌟 Styling -->
@@ -448,8 +557,8 @@
   
     .tabs button {
       background: transparent;
-      border: 2px solid #E5C100;
-      color: #E5C100;
+      border: 2px solid #e8c500;
+      color: #ffd900;
       padding: 8px 16px;
       font-weight: bold;
       cursor: pointer;
@@ -459,7 +568,7 @@
   
     .tabs button.active,
     .tabs button:hover {
-      background: #E5C100;
+      background: #ffd900;
       color: black;
     }
   
@@ -469,27 +578,27 @@
     }
   
     .course-card {
-      background: rgba(253, 255, 124, 0.05);
+      background: #5900ff;
       padding: 20px;
       border-radius: 10px;
-      border: 1px solid #E5C100;
-      box-shadow: 0 4px 12px rgba(229, 193, 0, 0.2);
+      border: 1px solid #ffd900;
+      box-shadow: 0 4px 12px rgb(248, 235, 162);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
   
     .course-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(229, 193, 0, 0.4);
+      box-shadow: 0 8px 16px rgb(255, 234, 118);
     }
   
     .course-card h3 {
-      color: #E5C100;
+      color: #ffd900;
       margin-bottom: 10px;
     }
   
     .course-card ul {
       list-style: disc inside;
-      color: #E5C100;
+      color: #ffd905;
       line-height: 1.6;
     }
   
@@ -517,7 +626,7 @@
   
   </style>
 
-  <section id="choir" class="About">
+  <section id="choir" class="About" data-aos="zoom-out">
     <h2>Choir & Concerts</h2>
     <p>✨ Choirs for Eucharistic Celebrations</p>
     <p>✨ Devotional & Cine Music Concerts</p>
@@ -530,22 +639,24 @@
     </div>
   </section>
   
-  <section id="Faculty" class="Faculty">
+  <section id="Faculty" class="Faculty" data-aos="flip-left">
     <h2>Faculty</h2>
     <div class="teacher-card-container">
+
+        <div class="teacher-card">
+        <img src="C:\Users\hp\Downloads\daddy HD (2).jpg" alt="Mr. Albert Immanuel T" />
+        <h3>Mr. Albert Immanuel T</h3>
+        <p>Co-Director</p>
+        <p>Vocal</p>
+      </div>
+
         <div class="teacher-card">
             <img src="C:\Users\hp\Downloads\Deepak HD (2).jpg" alt="Silvester Deepak" />
             <h3>Mr. Silvester Deepak I</h3>
             <p>Co-Director</p>
-            <p>Piano, Guitar, Vocal</p>
+            <p>Piano, Guitar, Vocal & Choir Head</p>
           </div>
-    
-          <div class="teacher-card">
-            <img src="C:\Users\hp\Downloads\daddy HD (2).jpg" alt="Mr. Albert Immanuel T" />
-            <h3>Mr. Albert Immanuel T</h3>
-            <p>Co-Director</p>
-            <p>Vocal</p>
-          </div>
+
 
           <div class="teacher-card">
             <img src="C:\Users\hp\Downloads\Passport photo (3).jpg" alt="Mr. Raymund Natus A" />
@@ -554,7 +665,7 @@
           </div>
     
           <div class="teacher-card">
-            <img src="C:\Users\hp\Downloads\WhatsApp Image 2025-07-14 at 11.05.04_ee68b0b0 (2).jpg" alt="Mr. Dannie" />
+            <img src="C:\Users\hp\Downloads\dannie hd.jpg" alt="Mr. Dannie" />
             <h3>Mr. Dannie Jerome E</h3>
             <p>Piano</p>
           </div>
@@ -572,8 +683,8 @@
           </div>
     
           <div class="teacher-card">
-            <img src="C:\Users\hp\Downloads\prem (2).jpg" alt="Mr. Prem" />
-            <h3>Mr. Prem</h3>
+            <img src="C:\Users\hp\Downloads\prem (2).jpg" alt="Mr. Premkumar William L " />
+            <h3>Mr. Premkumar William L </h3>
             <p>Violin</p>
           </div>
     
@@ -584,14 +695,14 @@
           </div>
     
           <div class="teacher-card">
-            <img src="C:\Users\hp\Downloads\edwin 1 (2).jpg" alt="Mr. John Edwin" />
-            <h3>Mr. John Edwin</h3>
+            <img src="C:\Users\hp\Downloads\Edwin -Pica (2).png"alt="Mr. John Edwin J" />
+            <h3>Mr. John Edwin J</h3>
             <p>Advocate</p>
             <p>Legal Advisor</p>
     </div>
   </section>
 
-  <section id="buying and selling" class ="courses">
+  <section id="buying and selling" class ="courses" data-aos="slide-up">
     <h2>Buying and Selling Musical Instruments</h2>
     <p>- We offered you a wide range of Musical Instruments for Sale</p>
     <p>- We also provided Musical Instruments Services too</p>
@@ -618,12 +729,12 @@
 
    </section> 
 
-  <section id="video" class="video">
+  <section id="video" class="video" data-aos="fade-left">
     <h2>📽️ Watch Our Demo</h2>
     <iframe src="https://www.youtube.com/embed/hryXR7Rl98Y?si=aO2Zfh4a6nOWb6Bb" allowfullscreen></iframe>
   </section>
 
-  <section id="testimonials" class="video">
+  <section id="testimonials" class="video" data-aos="fade-left">
     <h2>🌟 Voices of San Maria</h2>
     <div class="testimonial-slider" style="overflow:hidden;">
       <div class="testimonial-track" style="display: flex; transition: transform 0.6s ease; width: 300%;">
@@ -642,7 +753,7 @@
       </div>
     </div>
   </section>
-  <section id="gallery" class="courses">
+  <section id="gallery" class="courses" data-aos="fade-right">
     <h2>Gallery</h2>
   
     <!-- 🎓 School Gallery -->
@@ -665,10 +776,16 @@
       <img src="C:\Users\hp\Pictures\Screenshots\Screenshot 2025-07-15 175213.png" alt="Choir" style="width:100%; border-radius:10px;">
       <img src="C:\Users\hp\Pictures\Screenshots\Screenshot 2025-07-15 175234.png" alt="Choir" style="width:100%; border-radius:10px;">
       <img src="C:\Users\hp\Pictures\Screenshots\Screenshot 2025-07-15 175304.png" alt="Choir" style="width:100%; border-radius:10px;">
+      <img src="C:\Users\hp\Downloads\c pic2.jpg" alt="Choir" style="width:100%; border-radius:10px;">
+      <img src="C:\Users\hp\Downloads\c pic3.jpg" alt="Choir" style="width:100%; border-radius:10px;">
+      <img src="C:\Users\hp\Downloads\c pi1.jpg" alt="Choir" style="width:100%; border-radius:10px;">
+      <img src="C:\Users\hp\Downloads\wp3.jpg" alt="Choir" style="width:100%; border-radius:10px;">
+      <img src="C:\Users\hp\Downloads\wp2.jpg" alt="Choir" style="width:100%; border-radius:10px;">
+      <img src="C:\Users\hp\Downloads\wp1.jpg" alt="Choir" style="width:100%; border-radius:10px;">
     </div>
   </section>
   
-  <section id="branches" class="courses">
+  <section id="branches" class="courses" data-aos="fade-up">
     <h2>🏫 Our Branches</h2>
     <p>Visit our nearby branches and explore the world of music education!</p>
   
@@ -734,7 +851,7 @@
     }
   </style>
 
-<section id="form" class="courses">
+<section id="form" class="courses" data-aos="fade-down">
   <div class="form-container" style="max-width: 800px; margin: 40px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
     <h2 style="text-align: center; color: #333;">📝 Student Registration Form</h2>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfLXU35XWO1dDyfifz0Y0Nn00MF0QGLtBNMXD0e6Gk9iMKdkQ/viewform?embedded=true" 
@@ -750,7 +867,7 @@
 </section>
 
 
-  <section id="contact" class="contact">
+  <section id="contact" class="contact" data-aos="fade-up">
     <h2>📩 Contact Us</h2>
   
     <div style="font-size: 1.2rem; line-height: 2;">
@@ -769,25 +886,45 @@
       </p>
   
       <p><strong><i class="fas fa-clock"></i> Hours:</strong>  
-        Monday - Saturday: 5 PM – 8 PM
+        Monday - Saturday: 5 PM – 8:30 PM
       </p>
     </div>
     </div>
   </section>
 
-  <div style="text-align: center; margin-top: 20px;">
-    <h3 style="color: #60fffc;">Follow Us On</h3>
-    <div style="margin-top: 10px;">
-      <a href="https://www.facebook.com/sanmariamusic.sanmariamusic.5" target="_blank" style="margin: 0 10px; color: #3b5998;">
-        <i class="fab fa-facebook fa-2x"></i>
-      </a>
-      <a href="https://www.instagram.com/sanmariaschoolofmusic2017/" target="_blank" style="margin: 0 10px; color: #E1306C;">
-        <i class="fab fa-instagram fa-2x"></i>
-      </a>
-      <a href="https://www.youtube.com/@sanmariaschoolofmusic9892" target="_blank" style="margin: 0 10px; color: #FF0000;">
-        <i class="fab fa-youtube fa-2x"></i>
-      </a>
-    </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+  .social-icons a {
+    margin: 0 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.3) rotate(10deg);
+  }
+
+  .social-icons i {
+    transition: transform 0.3s ease;
+  }
+</style>
+
+<div style="text-align: center; margin-top: 20px;">
+  <h3 style="color: #60fffc;">Follow Us On</h3>
+  <div class="social-icons" style="margin-top: 10px;">
+    <a href="https://www.facebook.com/sanmariamusic.sanmariamusic.5" target="_blank" style="color: #3b5998;">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+    <a href="https://www.instagram.com/sanmariaschoolofmusic2017/" target="_blank" style="color: #E1306C;">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+    <a href="https://www.youtube.com/@sanmariaschoolofmusic9892" target="_blank" style="color: #FF0000;">
+      <i class="fab fa-youtube fa-2x"></i>
+    </a>
+  </div>
+</div>
+
   </div>
   
 
@@ -805,7 +942,7 @@
     position: fixed;
     width: 60px;
     height: 60px;
-    bottom: 20px;
+    bottom: 80px;
     right: 20px;
     background-color: #25d366;
     color: white;
@@ -830,8 +967,10 @@
 </style>
 
 
+
   <footer>
     <p>&copy; 2025 San Maria School of Music. All rights reserved.</p>
+    <p>Developed by San Maria AI Tech Team , Headed by Raymund Natus A</p>
   </footer>
 
   <script>
@@ -848,5 +987,17 @@
       track.style.transform = `translateX(-${slideIndex * 100}%)`;
     }, 4000);
   </script>
+  <!-- Other scripts or content above... -->
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000, // Animation duration in ms
+      once: true      // Animation occurs only once
+    });
+  </script>
+
 </body>
 </html>
+
